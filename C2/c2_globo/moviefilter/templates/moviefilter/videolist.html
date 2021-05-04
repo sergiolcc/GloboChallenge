@@ -3,10 +3,10 @@
 
 <div class = "filter">
   <div class="p-1">Filters:</div>
-  <input class="form-control" type="text" id="myInput0" onkeyup="myFunction()" placeholder="Search by title..." title="Type in a name">
-  <input class="form-control" type="text" id="myInput1" onkeyup="myFunction()" placeholder="Search by description..." title="Type in a name">
-  <input class="form-control" type="text" id="myInput2" onkeyup="myFunction()" placeholder="Search by director..." title="Type in a name">
-  <input class="form-control" type="text" id="myInput3" onkeyup="myFunction()" placeholder="Search by release date..." title="Type in a name"> 
+  <input class="form-control" type="text" id="myInput0" onkeyup="myFilterFunction()" placeholder="Search by title..." title="Type in a name">
+  <input class="form-control" type="text" id="myInput1" onkeyup="myFilterFunction()" placeholder="Search by description..." title="Type in a name">
+  <input class="form-control" type="text" id="myInput2" onkeyup="myFilterFunction()" placeholder="Search by director..." title="Type in a name">
+  <input class="form-control" type="text" id="myInput3" onkeyup="myFilterFunction()" placeholder="Search by release date..." title="Type in a name"> 
   
 </div>
 <div class="container-table">
@@ -21,52 +21,15 @@
         <th data-field="score">Rating Score</th>
         <th data-field="people">Characters</th>
       </tr>
-      <tr id="tbload"></tr>
+      
      
     </thead>
    <!-- <tbody></tbody>-->
   </table>
   </div>
   </div>
-
-<script>
-  /* barra de busca */
-    function myFunction() {
-      var input, filter, table, tr, td, i, txtValue;
-      
-      input = document.getElementById("myInput0");
-      input1 = document.getElementById("myInput1");
-      input2 = document.getElementById("myInput2");
-      input3 = document.getElementById("myInput3");
-
-      filter = input.value.toUpperCase();
-      filter1 = input1.value.toUpperCase();
-      filter2 = input2.value.toUpperCase();
-      filter3 = input3.value.toUpperCase();
-
-      table = document.getElementById("table");
-      console.log(table)
-      tr = table.getElementsByTagName("tr");
-      
-      console.log(tr)
-      for (i = 0; i < tr.length; i++) {
-        td = tr[i].getElementsByTagName("td")[0];
-        td1 = tr[i].getElementsByTagName("td")[1];
-        td2 = tr[i].getElementsByTagName("td")[2];
-        td3 = tr[i].getElementsByTagName("td")[3];
-        console.log(td)
-        if (td ||td1 || td2 ||td3) {
-          txtValue = td.textContent || td.innerText;
-          txtValue1 = td1.textContent || td1.innerText;
-          txtValue2 = td2.textContent || td2.innerText;
-          txtValue3 = td3.textContent || td3.innerText;
-          if (txtValue.toUpperCase().indexOf(filter) > -1 && txtValue1.toUpperCase().indexOf(filter1) > -1 && txtValue2.toUpperCase().indexOf(filter2) > -1 && txtValue3.toUpperCase().indexOf(filter3) > -1) {
-            tr[i].style.display = "";
-          } else {
-            tr[i].style.display = "none";
-          }
-        }       
-      }
-    }      
-</script>
+<div id="tbload"></div>
+<footer class ="rdp">
+  <div class="rodape">Sergio Castilho</div>
+</footer>  
 {% endblock %} 

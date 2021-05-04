@@ -36,18 +36,19 @@ def about(request):
 def getdata(request):
     dados = []
     movie_data = requests.get(f'https://ghibliapi.herokuapp.com/films')
-    for x in json.loads(movie_data.text):
+    if (movie_data):
+        for movie in json.loads(movie_data.text):
 
-        characters = get_character(x["id"])
-        
-        dados.append({
-            'title': x["title"],
-            'description': x["description"],
-            'director': (x["director"]),
-            'release_date': x["release_date"],
-            'score': x["rt_score"],
-            'people': characters}
-            )
+            characters = get_character(movie["id"])
+            
+            dados.append({
+                'title': movie["title"],
+                'description': movie["description"],
+                'director': (movie["director"]),
+                'release_date': movie["release_date"],
+                'score': movie["rt_score"],
+                'people': characters}
+                )
        
     
     json_response = {"data": dados}

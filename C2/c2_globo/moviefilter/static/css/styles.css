@@ -1,8 +1,7 @@
 body {
     height: auto;
     background-color:  rgb(178, 200, 207);
-    /*background-image: url('../ghibli_old.jpeg');
-    background-size: cover;*/
+    position: relative;
   }
 
   .main {
@@ -36,6 +35,8 @@ body {
     margin-right: 10%;
     margin-bottom: 1%;
     text-align: center;
+    position: relative;
+
 
     
   }
@@ -120,22 +121,34 @@ body {
     height: 5%;
   }
   
-  footer {
-  
-    position: fixed;
-    bottom: 0px;
+  .rdp {
+    margin-top: 3.4%;
+    text-align: right;
+    position: relative;
     width: 100%;
-    text-align: center;
-    height: 30px;
-    background-color: #0d6efd;
+    height: 4%;
+    background-color: white;
   }
-  
-  footer h6 {
-    float: right;
-    margin-right: 30px;
-    font-size: 10px;
+  .rdp-contact {
+    position: fixed;
+    bottom: 0%;
+    text-align: right;
+    width: 100%;
+    height: 4%;
+    background-color: white;
+  }
+  .rdp-about {
+    position: fixed;
+    bottom: 0%;
+    text-align: right;
+    width: 100%;
+    height: 4%;
+    background-color: white;
+  }
+  .rodape {
+    margin-right: 2%;
     font-weight: bold;
-    color: #fff;
+    color: rgb(115, 179, 199);
   }
   
   .pagination {
@@ -151,16 +164,15 @@ body {
     height: 1.5px;
   }
   .loader {
-    position: fixed;
-    left: 48%;
-    margin-top: 100px;
+    margin-left: 48%;
+    margin-top: 50px;
     border-top: 16px solid blue;
     border-right: 16px solid rgb(0, 60, 255);
     border-bottom: 16px solid rgb(0, 132, 255);
     border-left: 16px solid rgb(0, 204, 255);
     border-radius: 50%;
-    width: 4%;
-    height: 8%;
+    width: 80px;
+    height: 80px;
     animation: spin 2s linear infinite;
   }
   
