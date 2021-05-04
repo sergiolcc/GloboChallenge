@@ -3,55 +3,56 @@ import groovy.json.JsonOutput;
 import java.io.FileWriter;
 import java.text.DecimalFormat;
 
-
-
-def writeJson(data, fileNameOutput){ //Função que cria um arquivo json e salva os dados
+def writeJson(data, fileNameOutput){ //Function that creates a json file and saves the data
     try{
 
-        println("\n\nSalvando arquivo ${fileNameOutput} em json")
+        println("\n\nSaving file ${fileNameOutput}")
         writeFile = new FileWriter(fileNameOutput);
         def json_str = JsonOutput.toJson(data)         
         def json_beauty = JsonOutput.prettyPrint(json_str)
         
-        writeFile.write(json_beauty);   //Escreve o dado dentro do arquivo json criado    
+        writeFile.write(json_beauty);   //Write the data inside the created json file
             
         writeFile.close();
-        println("Arquivo salvo")
+        println("File saved")
     }catch(IOException e){
-        println("Erro ao salvar arquivo json")
+        println("Error saving json file")
 		e.printStackTrace();
             
 		}
 }
 
-def convertSizeToGB(size){ //Função que converte o tamanho para padrão GB
+def convertSizeToGB(size){ //Function that converts the size to GB standard
+
     
-    DecimalFormat df = new DecimalFormat("#0.00"); //Objeto que coloca o formato decimal com duas casas após virgula.
-    //Poderia ser utilizado 10^(-9) ou 1/1073741824 como multiplicador. Preferência pela segunda é devido os computadores usarem binário. 
+    DecimalFormat df = new DecimalFormat("#0.00"); //Object that places the decimal format with two spaces after a comma.
+    
+    //10 ^ (- 9) or 1/1073741824 could be used as a multiplier. Preference for the second is because computers use binary.
     String newSize = ((double)size/1073741824) < 1 ? df.format((double)size/1073741824).toString() : size/1073741824
     return newSize
     
 }
 
 
-def getDadosFromTxt(fileContents, data){ // Função que captura os dados do txt e organiza por categorias
+def getDadosFromTxt(fileContents, data){ // Function that captures txt data and organize by categories
+
     
-    def firstLine = true //variável utilizada para ignorar a primeira linha do cabeçalho
+    def firstLine = true //Variable used to ignore the first line of the txt, the header.
     
     try{
         fileContents.eachLine { Line-> 
         
-            if (Line && firstLine == false){//If na Linha abaixo usado para eliminar as linhas vazias e a linha do cabeçalho  
+            if (Line && firstLine == false){//If in the Line below used to eliminate the empty lines and the header line.
                 
                 
-                //Usando o find com Regex para capturar os dados da coluna das linhas não vazias e que não seja o cabeçalho
+                //Using find with Regex to capture column data for non-empty rows other than the header 
                 String movieName = Line.find(/([\w\s:.-]+)\s/).replaceAll(/\d\d-\d\d-\d\d\d\d/, '')?.trim()
                 Long size = Line.split(" ")[-1].toLong()  
                 String date =  Line.find(/\d\d-\d\d-\d\d\d\d/)?.replaceAll('-', '/')
                 String path = Line.find(/(\d\d-\d\d-\d\d\d\d)+\s+\S+/)?.replaceAll(/\d\d-\d\d-\d\d\d\d/, '')?.trim()
                 
-                println("Adicionando dados do filme ${movieName} ao json")
-                //Map usado para inserir os dados de cada linha
+                println("Adding data from the movie ${movieName} to json ")
+                //Map used to insert data for each row
                 data << [
                 name: movieName,
                 path: path ,
@@ -64,7 +65,7 @@ def getDadosFromTxt(fileContents, data){ // Função que captura os dados do txt
     }
     return data
     }catch(Exception e){
-            println("Erro coletar dados das colunas do txt e inserir no map 'data' !!!!!")
+            println("Error collecting data from txt columns and inserting 'data' in the map!")
             return data
 
 
@@ -74,51 +75,51 @@ def getDadosFromTxt(fileContents, data){ // Função que captura os dados do txt
 }
 
 
-def main() { // Declaração de função principal
+def main() { // Main function declaration
     try{
-    def data = []
+        def data = []
 
-    //Listando o diretório atual
-    String currentDir = new File("").getAbsolutePath()
+        //Listing the current directory 
+        String currentDir = new File("").getAbsolutePath()
+
+        
+        // If you do not receive a parameter at the time of execution, filename receives " planilha.txt"
+        args = this.args
+        println("\nChecking filename argument: ${args ? 'Argument sent': 'Argument not sent. Default value planilha.txt will be used '}")
+        filename = args ? args[0] : 'planilha.txt'
+        def file_input = new File("${currentDir}/${filename}")
 
     
-    // Caso não receba parametro na hora de executar, filename recebe "planilha.txt"
-    args = this.args
-    println("\nChecagem de argumento filename: ${args ? 'Argumento passado' : 'Argumento não passado. Será utilizado valor default planilha.txt'}")
-    filename = args ? args[0] : 'planilha.txt'
-    def file_input = new File("${currentDir}/${filename}")
+        if (file_input.exists()){   //Check if the files really exists
+            println("File ${filename} found ")
+            
+            def fileContents = file_input?.getText('UTF-8')//Get the contents of the input file
+            println("Getting file contents: ${filename}\n\n")
 
- 
-    if (file_input.exists()){   //Checa se o arquivo  realmente existem
-        println("Arquivo  ${filename} encontrado ")
-        
-        def fileContents = file_input?.getText('UTF-8')//Pegar o conteúdo do arquivo de entrada
-        println("Pegando conteúdo do arquivo: ${filename}\n\n")
-
-        data_to_json = getDadosFromTxt(fileContents, data) //Chama função que coleta dados do txt e coloca em um map
-        
-        
-         
-        outputFileName =  args.size() > 1 ? args[1] : "PlanilhaOut.json" //Verifica se argumento foi passado para saída
+            data_to_json = getDadosFromTxt(fileContents, data) //Calls the function that collects data from the txt and places it on a map
+            
+            
+            
+            outputFileName =  args.size() > 1 ? args[1] : "PlanilhaOut.json" //Checks whether argument has been passed out
 
 
-        //Chama função de escrever dados verificando se o arquivo outputfilename já tem presente a extensão .json
-        if (data)
-        writeJson(data_to_json, outputFileName.toString().endsWith(".json") ? outputFileName : "${outputFileName}.json")
-        else
-        println("Problemas ao capturar dados do txt. Ela pode conter elementos com estrutura diferente.")
+            //Calls function to write data verifying if the file outputfilename already has the extension .json
+            if (data)
+            writeJson(data_to_json, outputFileName.toString().endsWith(".json") ? outputFileName : "${outputFileName}.json")
+            else
+            println("Error when capturing txt data. It can contain elements with different structure.")
 
-    }else{
-        println("Arquivo não encontrado")
+        }else{
+            println("File not found")
     }
 
            
 	}catch(IOException e){
-            println("Erro no fluxo")
-			e.printStackTrace();
+        println("Flow error")
+        e.printStackTrace();
             
-		}
+	}
 }
 
-//Chama a função principal
+//Calls the main function
 main()
