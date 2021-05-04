@@ -1,0 +1,30 @@
+name    date   path    create_by    size
+
+Joker   10-03-2019  /Mount/movies/Joker.mxf Todd Phillips   24696061952
+Parasite 07-11-2019 /Mount/movies/Parasite.mxf  Bong Joon-ho    35433480192 
+Frozen  27-11-2019  /Mount/movies/Frozen.mxf    Jennifer Lee    49392123904
+
+
+Star Wars   19-12-2019  /Mount/movies/Star_wars.mxf J.J. Abrams 31138512896
+Avengers: EndGame   25-04-2019  /Mount/movies/EndGame.mxf   Anthony Russo   139586437120
+
+
+
+Fractured   11-10-2019  /Mount/movies/Fractured.mp4  Brad Anderson  768924486
+
+
+1917    18-01-2020  /Mount/movies/1917.mxf  Sam Mendes  63350767616
+Dumbo   28-03-2019  /Mount/movies/Dumbo.mxf Robert Rodriguez    76235669504
+Ad Astra    26-09-2019  /Mount/movies/AdAstra.mxf   James Gray  95563022336
+Glass   17-01-2019  /Mount/movies/Glass.mxf   46170898432
+
+
+El Hoyo   21-02-2020  /Mount/movies/ElHoyo.mp4  Galder Gaztelu-Urrutia  657019718
+Nuovo Cinema Paradiso   01-01-1988  /Mount/movies/NuovoCinemaParadiso.mkv   Giuseppe Tornatore    1073741824
+
+
+Shazam  04-04-2019  /Mount/movies/Shazam.mxf    David Sandberg  67645734912
+Us  21-03-2019  /Mount/movies/Us.mxf    Jordan Peele    71940702208
+
+
+Lego Movie  07-02-2019  /Mount/movies/Lego_Movie.mxf    Mike Mitchell   93415538688

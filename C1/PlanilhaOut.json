@@ -1,0 +1,92 @@
+[
+    {
+        "name": "Joker",
+        "path": "/Mount/movies/Joker.mxf",
+        "date": "10/03/2019",
+        "size": "23 GB"
+    },
+    {
+        "name": "Parasite",
+        "path": "/Mount/movies/Parasite.mxf",
+        "date": "07/11/2019",
+        "size": "33 GB"
+    },
+    {
+        "name": "Frozen",
+        "path": "/Mount/movies/Frozen.mxf",
+        "date": "27/11/2019",
+        "size": "46 GB"
+    },
+    {
+        "name": "Star Wars",
+        "path": "/Mount/movies/Star_wars.mxf",
+        "date": "19/12/2019",
+        "size": "29 GB"
+    },
+    {
+        "name": "Avengers: EndGame",
+        "path": "/Mount/movies/EndGame.mxf",
+        "date": "25/04/2019",
+        "size": "130 GB"
+    },
+    {
+        "name": "Fractured",
+        "path": "/Mount/movies/Fractured.mp4",
+        "date": "11/10/2019",
+        "size": "0,72 GB"
+    },
+    {
+        "name": "1917",
+        "path": "/Mount/movies/1917.mxf",
+        "date": "18/01/2020",
+        "size": "59 GB"
+    },
+    {
+        "name": "Dumbo",
+        "path": "/Mount/movies/Dumbo.mxf",
+        "date": "28/03/2019",
+        "size": "71 GB"
+    },
+    {
+        "name": "Ad Astra",
+        "path": "/Mount/movies/AdAstra.mxf",
+        "date": "26/09/2019",
+        "size": "89 GB"
+    },
+    {
+        "name": "Glass",
+        "path": "/Mount/movies/Glass.mxf",
+        "date": "17/01/2019",
+        "size": "43 GB"
+    },
+    {
+        "name": "El Hoyo",
+        "path": "/Mount/movies/ElHoyo.mp4",
+        "date": "21/02/2020",
+        "size": "0,61 GB"
+    },
+    {
+        "name": "Nuovo Cinema Paradiso",
+        "path": "/Mount/movies/NuovoCinemaParadiso.mkv",
+        "date": "01/01/1988",
+        "size": "1 GB"
+    },
+    {
+        "name": "Shazam",
+        "path": "/Mount/movies/Shazam.mxf",
+        "date": "04/04/2019",
+        "size": "63 GB"
+    },
+    {
+        "name": "Us",
+        "path": "/Mount/movies/Us.mxf",
+        "date": "21/03/2019",
+        "size": "67 GB"
+    },
+    {
+        "name": "Lego Movie",
+        "path": "/Mount/movies/Lego_Movie.mxf",
+        "date": "07/02/2019",
+        "size": "87 GB"
+    }
+]
