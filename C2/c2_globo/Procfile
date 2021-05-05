@@ -1,0 +1,2 @@
+release: python3 manage.py migrate
+web: guincorn c2_globo.wsgi --preload --log-file -
