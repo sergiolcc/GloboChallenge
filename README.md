@@ -26,7 +26,7 @@ Desafio 2:
 
 
     Para executar em sua máquina execute os seguintes comandos dentro da pasta c2_globo:
-    --> pip install requirements.txt
+    --> pip install -r requirements.txt
     --> python manage.py runserver
 
     Para acessar o site, coloque em seu browser: 
