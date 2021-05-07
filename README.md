@@ -13,7 +13,7 @@ Desafio 1:
 
     --> groovy Desafio1.groovy
 
-    Pode passar com argumentos do nome de arquivo de entrada e o nome do arquivo de saída, como:
+    Pode passar com argumentos o nome do arquivo de entrada e o nome do arquivo de saída, como:
 
     --> groovy Desafio1.groovy "planilhas.txt" "FilenameOutput.json"
 
