@@ -1,16 +1,8 @@
-html{
-  height: 100%;
-  width:100%;
-  margin: 0;
-  padding: 0;
-}
 body {
-    height: 100%;
+    height: auto;
     background-color:  rgb(178, 200, 207);
     width:100%;
-    margin: 0;
-    padding: 0;
-  }
+}
 
   .main {
     position: relative;
@@ -41,9 +33,9 @@ body {
     border-color: rgb(210, 212, 216);
     margin-left: 10%;
     margin-right: 10%;
-    margin-bottom: 1%;
+    margin-bottom: 2%;
     text-align: center;
-    position: relative;   
+    position: relative;  
   }
   .filter{
     
@@ -202,9 +194,9 @@ body {
       font-family: 'Fira Sans', sans-serif;
       font-weight: 400;
       } 
-      td {
-        display: table-cell;
-        vertical-align: middle;
+   td {
+      display: table-cell;
+      vertical-align: middle;
     }
   
     thead tr{
