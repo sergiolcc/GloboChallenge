@@ -3,22 +3,33 @@ Aplicações Globo
 
 Desafio 1: 
 
-Para executar o código, insira o seguinte comando:
+    A primeira pasta(C1) contém 3 arquivos: 
+    -   O script Desafio.groovy desenvolvido
+    -   Arquivo fonte enviado para o desafio(planilha.txt)
+    -   E o arquivo json gerado pelo script
+    Especificações da linguagem nos testes: Groovy Version: 3.0.5 JVM: 1.8.0_271 
 
---> groovy Desafio1.groovy
+    Para executar o código, insira o seguinte comando:
 
-Pode passar com argumentos do nome de arquivo de entrada e o nome do arquivo de saída, como:
+    --> groovy Desafio1.groovy
 
---> groovy Desafio1.groovy "planilhas.txt" "FilenameOutput.json"
+    Pode passar com argumentos do nome de arquivo de entrada e o nome do arquivo de saída, como:
 
-Desafio 1: 
+    --> groovy Desafio1.groovy "planilhas.txt" "FilenameOutput.json"
 
-Aplicação Web em Django
-Para executar em sua máquina execute o seguinte comando dentro da pasta c2_globo:
+Desafio 2: 
 
---> python manage.py runserver
+    Na segunda pasta(C2) está presente os arquivos necessários para executar a aplicação web.
+    A Aplicação Web foi feita utilizando o framework web Django e o deploy da aplicação foi feita na plataforma Heroku e pode ser acessada pelo site:
 
-Para acessar o site, coloque em seu browser: 
+    - https://obscure-island-40678.herokuapp.com/
 
--  localhost:8000
+
+    Para executar em sua máquina execute os seguintes comandos dentro da pasta c2_globo:
+    --> pip install requirements.txt
+    --> python manage.py runserver
+
+    Para acessar o site, coloque em seu browser: 
+
+    -  localhost:8000
 

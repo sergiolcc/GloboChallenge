@@ -16,7 +16,7 @@ def get_character(id):
  
     movie_character_converted = ", ".join(movie_character)
    
-    return  movie_character_converted if movie_character_converted else "no characters found"
+    return  movie_character_converted if movie_character_converted else "No characters found"
 #Rota que renderiza a página principal
 def home(request):
     
