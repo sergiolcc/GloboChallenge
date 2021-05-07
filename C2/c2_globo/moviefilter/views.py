@@ -14,7 +14,7 @@ def get_character(id):
                 movie_character.append(character["name"])
                 character_passed.append(character["name"])
  
-    movie_character_converted = ",".join(movie_character)
+    movie_character_converted = ", ".join(movie_character)
    
     return  movie_character_converted if movie_character_converted else "no characters found"
 #Rota que renderiza a página principal
